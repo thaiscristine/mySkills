@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import {Platform} from 'react-native';
+import {Platform, View} from 'react-native';
 import {
   Text,
   StyleSheet,
@@ -18,7 +18,7 @@ export function Home() {
   }
 
   return (
-    <SafeAreaView style={styles.container}>
+    <View style={styles.container}>
       <Text style={styles.title}>Welcome,</Text>
       <TextInput
         style={styles.input}
@@ -33,23 +33,21 @@ export function Home() {
         <Text style={styles.buttonText}>Add</Text>
       </TouchableOpacity>
 
-      <Text style={[styles.title, {marginVertical: 50}]}>
-        My skiils
-      </Text>
+      <Text style={[styles.title, {marginVertical: 50}]}>My skiils</Text>
 
       {mySkills.map(skill => (
-        <TouchableOpacity style={styles.buttonSkill}>
+        <TouchableOpacity key={skill} style={styles.buttonSkill}>
           <Text style={styles.textSkill}>{skill}</Text>
         </TouchableOpacity>
       ))}
-    </SafeAreaView>
+    </View>
   );
 }
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    paddingHorizontal: 20,
+    paddingHorizontal: 30,
     paddingVertical: 70,
     backgroundColor: '#121015',
   },
@@ -82,6 +80,7 @@ const styles = StyleSheet.create({
     backgroundColor: '#1f1e25',
     padding: 15,
     borderRadius: 50,
+    marginVertical: 10,
   },
   textSkill: {
     color: '#fff',
