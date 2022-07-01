@@ -1,12 +1,20 @@
 import React, {useState} from 'react';
-import {Text, Platform, StyleSheet, View, TextInput} from 'react-native';
+import {
+  Text,
+  Platform,
+  StyleSheet,
+  View,
+  TextInput,
+  FlatList,
+} from 'react-native';
 
 import {Button} from '../components/Button';
 import {SkillCards} from '../components/SkillCard';
 
 export function Home() {
+  const marginVertical50 = 50;
+
   const [newSkill, setNewSkill] = useState('');
-  // const marginVerticalValue = 50;
   const [mySkills, setMySkills] = useState([]);
 
   function handleAddNewSkill() {
@@ -24,11 +32,15 @@ export function Home() {
       />
       <Button onPress={handleAddNewSkill} />
 
-      <Text style={[styles.title, {marginVertical: 50}]}>My skiils</Text>
+      <Text style={[styles.title, {marginVertical: marginVertical50}]}>
+        My skiils
+      </Text>
 
-      {mySkills.map(skill => (
-        <SkillCards skill={skill} />
-      ))}
+      <FlatList
+        data={mySkills}
+        keyExtractor={item => item}
+        renderItem={({item}) => <SkillCards skill={item} />}
+      />
     </View>
   );
 }
