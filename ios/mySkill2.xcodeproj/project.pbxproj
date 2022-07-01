@@ -114,7 +114,6 @@
 				B3183A1BA279D5A9CA898F67 /* Pods-mySkill2-mySkill2Tests.debug.xcconfig */,
 				7A6E1C265B80ACD47D093CDD /* Pods-mySkill2-mySkill2Tests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
