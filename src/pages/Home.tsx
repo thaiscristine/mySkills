@@ -55,7 +55,7 @@ export function Home() {
         placeholderTextColor="#555"
         onChangeText={setNewSkill}
       />
-      <Button onPress={handleAddNewSkill} />
+      <Button onPress={handleAddNewSkill} title='Add' />
 
       <Text style={[styles.title, { marginVertical: marginVertical50 }]}>
         My skiils
@@ -84,8 +84,6 @@ const styles = StyleSheet.create({
   },
   greetings: {
     color: '#fff',
-    // fontWeight: 'bold',
-    // fontSize: 24,
   },
   input: {
     backgroundColor: '#1f1e25',
